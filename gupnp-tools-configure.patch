@@ -1,10 +1,10 @@
-diff -urN gupnp-tools-0.7/configure.ac gupnp-tools-0.7.new/configure.ac
---- gupnp-tools-0.7/configure.ac	2008-10-27 19:20:17.000000000 +0100
-+++ gupnp-tools-0.7.new/configure.ac	2009-04-11 22:21:03.865129149 +0200
-@@ -23,7 +23,6 @@
+diff -urN gupnp-tools-0.7.1/configure.ac gupnp-tools-0.7.1.new/configure.ac
+--- gupnp-tools-0.7.1/configure.ac	2009-04-27 17:06:27.000000000 +0200
++++ gupnp-tools-0.7.1.new/configure.ac	2009-06-30 00:42:38.107287624 +0200
+@@ -21,7 +21,6 @@
+ PKG_CHECK_MODULES(LIBGUPNP, gupnp-1.0 >= $GUPNP_REQUIRED)
  PKG_CHECK_MODULES(GTK, gtk+-2.0 >= $GTK_REQUIRED)
  PKG_CHECK_MODULES(GTHREAD, gthread-2.0 >= $GTHREAD_REQUIRED)
- PKG_CHECK_MODULES(LIBGLADE, libglade-2.0 >= $LIBGLADE_REQUIRED)
 -PKG_CHECK_MODULES(GNOME_ICON_THEME, gnome-icon-theme >= $ICON_THEME_REQUIRED)
  PKG_CHECK_MODULES(GIO, gio-2.0 >= $GIO_REQUIRED)
  
