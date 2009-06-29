@@ -1,20 +1,19 @@
 Summary:	UPnP Tools
 Name:		gupnp-tools
-Version:	0.7
+Version:	0.7.1
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://www.gupnp.org/sources/gupnp-tools/%{name}-%{version}.tar.gz
-# Source0-md5:	a96674de9bfdc42c70e8b9f801e2822e
+# Source0-md5:	55dd1917fc23a01daf3a0a82c5d08460
 Patch0:		%{name}-configure.patch
 URL:		http://www.gupnp.org/
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake
-BuildRequires:	glib2-devel >= 1:2.16.0
-BuildRequires:	gtk+2-devel >= 2:2.12.0
+BuildRequires:	glib2-devel >= 1:2.18.0
+BuildRequires:	gtk+2-devel >= 2:2.16.0
 BuildRequires:	gupnp-av-devel >= 0.2
 BuildRequires:	gupnp-devel >= 0.12
-BuildRequires:	libglade2-devel >= 1:2.6.2
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
