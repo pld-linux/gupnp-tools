@@ -1,0 +1,33 @@
+--- gupnp-tools-0.8/data/gupnp-av-cp.desktop.in.in~	2009-01-07 00:48:36.000000000 +0100
++++ gupnp-tools-0.8/data/gupnp-av-cp.desktop.in.in	2010-05-12 14:13:48.754756800 +0200
+@@ -1,7 +1,7 @@
+ [Desktop Entry]
+ Encoding=UTF-8
+ Name=UPnP AV Control Point
+-Categories=GTK;Development;
++Categories=GTK;Network;RemoteAccess;
+ Exec=gupnp-av-cp
+ Icon=@datarootdir@/gupnp-tools/pixmaps/av-cp.png
+ Terminal=false
+--- gupnp-tools-0.8/data/gupnp-network-light.desktop.in.in~	2009-01-07 00:48:36.000000000 +0100
++++ gupnp-tools-0.8/data/gupnp-network-light.desktop.in.in	2010-05-12 14:13:58.912572397 +0200
+@@ -1,7 +1,7 @@
+ [Desktop Entry]
+ Encoding=UTF-8
+ Name=UPnP Network Light
+-Categories=GTK;Development;
++Categories=GTK;Network;RemoteAccess;
+ Exec=gupnp-network-light
+ Icon=@datarootdir@/gupnp-tools/pixmaps/network-light-256x256.png
+ Terminal=false
+--- gupnp-tools-0.8/data/gupnp-universal-cp.desktop.in.in~	2009-01-07 00:48:36.000000000 +0100
++++ gupnp-tools-0.8/data/gupnp-universal-cp.desktop.in.in	2010-05-12 14:14:08.712755924 +0200
+@@ -1,7 +1,7 @@
+ [Desktop Entry]
+ Encoding=UTF-8
+ Name=UPnP Universal Control Point
+-Categories=GTK;Development;
++Categories=GTK;Network;RemoteAccess;
+ Exec=gupnp-universal-cp
+ Icon=@datarootdir@/gupnp-tools/pixmaps/universal-cp.png
+ Terminal=false

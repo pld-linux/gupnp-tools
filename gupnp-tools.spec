@@ -1,12 +1,13 @@
 Summary:	UPnP Tools
 Name:		gupnp-tools
 Version:	0.8
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://www.gupnp.org/sources/gupnp-tools/%{name}-%{version}.tar.gz
 # Source0-md5:	e2122d273d8ae6bf1cbca94fc4659e90
 Patch0:		%{name}-configure.patch
+Patch1:		%{name}-desktop.patch
 URL:		http://www.gupnp.org/
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake
@@ -42,6 +43,7 @@ one to easily test and debug one's UPnP devices and control points:
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 %{__libtoolize}
