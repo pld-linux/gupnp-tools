@@ -1,22 +1,30 @@
-Summary:	UPnP Tools
+Summary:	GUPnP Tools
+Summary(pl.UTF-8):	Narzędzia GUPnP
 Name:		gupnp-tools
-Version:	0.8
-Release:	2
-License:	GPL v2
+Version:	0.8.1
+Release:	1
+License:	GPL v2+
 Group:		X11/Applications
-Source0:	http://www.gupnp.org/sources/gupnp-tools/%{name}-%{version}.tar.gz
-# Source0-md5:	e2122d273d8ae6bf1cbca94fc4659e90
+#Source0Download: http://gupnp.org/download
+Source0:	http://gupnp.org/sites/all/files/sources/%{name}-%{version}.tar.gz
+# Source0-md5:	d8a44a8c19b1cc10b8e5508448d8493f
 Patch0:		%{name}-configure.patch
 Patch1:		%{name}-desktop.patch
-URL:		http://www.gupnp.org/
+URL:		http://gupnp.org/
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake
 BuildRequires:	glib2-devel >= 1:2.18.0
-BuildRequires:	gtk+2-devel >= 2:2.16.0
-BuildRequires:	gupnp-av-devel >= 0.5.0
-BuildRequires:	gupnp-devel >= 0.13.0
+BuildRequires:	gtk+2-devel >= 2:2.16
+BuildRequires:	gupnp-av-devel >= 0.5.5
+BuildRequires:	gupnp-devel >= 0.13
 BuildRequires:	libtool
+BuildRequires:	libuuid-devel
 BuildRequires:	pkgconfig
+Requires:	glib2 >= 1:2.18.0
+Requires:	gnome-icon-theme >= 2.20
+Requires:	gtk+2 >= 2:2.16
+Requires:	gupnp-av >= 0.5.5
+Requires:	gupnp >= 0.13
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -30,8 +38,8 @@ one to easily test and debug one's UPnP devices and control points:
 
 - Network Light: a virtual light bulb that allows control points to
   switch it on and off, change its dimming level and query its current
-  status. It also provides a simple UI to control all the network lights
-  available on the network.
+  status. It also provides a simple UI to control all the network
+  lights available on the network.
 
 - AV Control Point: a simple media player UI that enables one to
   discover and play multimedia contents available on a network.
@@ -39,6 +47,30 @@ one to easily test and debug one's UPnP devices and control points:
 - Upload: a simple commandline utility that uploads files to known
   MediaServers. Use Universal Control Point for discovering the
   MediaServers.
+
+%description -l pl.UTF-8
+Narzędzia GUPnP to wolnodostępne zamienniki narzędzi UPnP Intela
+wykorzystujące GUPnP. Udostępniają następujące narzędzia klienckie i
+serwerowe, pozwalające łatwo diagnozować urządzenia i punkty kontrolne
+UPnP:
+
+- Universal Control Point (uniwersalny punkt kontrolny) - narzędzie
+  pozwalające wykrywać urządzenia i usługi UPnP, odczytywać informacje
+  o nich, pobierać zdarzenia i wywoływać akcje.
+
+- Network Light (światło sieciowe) - wirtualna żarówka pozwalająca
+  punktom kontrolnym na włączanie i wyłączanie, zmianę poziomu
+  oświetlenia oraz sprawdzanie aktualnego stanu. Udostępnia także
+  prosty interfejs użytkownika do sterowania światłami sieciowymi
+  dostępnymi w sieci.
+
+- AV Control Point (punkt kontrolny AV) - prosty interfejs użytkownika
+  odtwarzacza multimedialnego pozwalający wykrywać i odtwarzać treści
+  multimedialne dostępne w sieci.
+
+- Upload - proste narzędzie działające z linii poleceń przesyłające
+  pliki na znane serwery multimediów (MediaServers). Serwery można
+  zlokalizować przy użyciu uniwersalnego punktu kontrolnego.
 
 %prep
 %setup -q
