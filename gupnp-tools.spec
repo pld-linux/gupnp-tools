@@ -1,27 +1,31 @@
 Summary:	GUPnP Tools
 Summary(pl.UTF-8):	Narzędzia GUPnP
 Name:		gupnp-tools
-Version:	0.8.3
+Version:	0.8.4
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
-#Source0Download: http://gupnp.org/download
-Source0:	http://gupnp.org/sites/all/files/sources/%{name}-%{version}.tar.gz
-# Source0-md5:	9d0c554629211d38252057d827355317
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gupnp-tools/0.8/%{name}-%{version}.tar.xz
+# Source0-md5:	3b796922e25f51cb4d43ec733e025480
 Patch0:		%{name}-configure.patch
 Patch1:		%{name}-desktop.patch
 URL:		http://gupnp.org/
-BuildRequires:	autoconf >= 2.53
-BuildRequires:	automake
+BuildRequires:	autoconf >= 2.63
+BuildRequires:	automake >= 1:1.11
 BuildRequires:	glib2-devel >= 1:2.18.0
+BuildRequires:	gssdp-devel >= 0.10
 BuildRequires:	gtk+3-devel >= 3.0.0
+BuildRequires:	gtksourceview3-devel >= 3.0.0
 BuildRequires:	gupnp-av-devel >= 0.5.5
 BuildRequires:	gupnp-devel >= 0.13
-BuildRequires:	libtool
+BuildRequires:	libtool >= 2:2.2
 BuildRequires:	libuuid-devel
 BuildRequires:	pkgconfig
+BuildRequires:	tar >= 1:1.22
+BuildRequires:	xz
 Requires:	glib2 >= 1:2.18.0
 Requires:	gnome-icon-theme >= 2.20
+Requires:	gssdp >= 0.10
 Requires:	gtk+3 >= 3.0.0
 Requires:	gupnp-av >= 0.5.5
 Requires:	gupnp >= 0.13
@@ -83,7 +87,8 @@ UPnP:
 %{__autoconf}
 %{__autoheader}
 %{__automake}
-%configure
+%configure \
+	--disable-silent-rules
 %{__make}
 
 %install
@@ -98,6 +103,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
+%attr(755,root,root) %{_bindir}/gssdp-discover
 %attr(755,root,root) %{_bindir}/gupnp-av-cp
 %attr(755,root,root) %{_bindir}/gupnp-network-light
 %attr(755,root,root) %{_bindir}/gupnp-universal-cp
