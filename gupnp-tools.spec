@@ -1,23 +1,24 @@
 Summary:	GUPnP Tools
 Summary(pl.UTF-8):	Narzędzia GUPnP
 Name:		gupnp-tools
-Version:	0.8.5
+Version:	0.8.6
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gupnp-tools/0.8/%{name}-%{version}.tar.xz
-# Source0-md5:	e2878f3354ca57959e472d99da1c060b
+# Source0-md5:	915f6b36375b874e2a329b108b91f62b
 Patch0:		%{name}-configure.patch
 Patch1:		%{name}-desktop.patch
 URL:		http://gupnp.org/
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.11
 BuildRequires:	glib2-devel >= 1:2.24
-BuildRequires:	gssdp-devel >= 0.10
+BuildRequires:	gssdp-devel >= 0.14
 BuildRequires:	gtk+3-devel >= 3.0.0
-BuildRequires:	gtksourceview3-devel >= 3.0.0
+BuildRequires:	gtksourceview3-devel >= 3.2.0
 BuildRequires:	gupnp-av-devel >= 0.5.5
-BuildRequires:	gupnp-devel >= 0.13
+BuildRequires:	gupnp-devel >= 0.18
+BuildRequires:	intltool >= 0.40.6
 BuildRequires:	libsoup-devel >= 2.4
 BuildRequires:	libtool >= 2:2.2
 BuildRequires:	libuuid-devel
@@ -28,11 +29,11 @@ BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 Requires:	glib2 >= 1:2.24
 Requires:	gnome-icon-theme >= 2.20
-Requires:	gssdp >= 0.10
+Requires:	gssdp >= 0.14
 Requires:	gtk+3 >= 3.0.0
-Requires:	gtksourceview3 >= 3.0.0
+Requires:	gtksourceview3 >= 3.2.0
 Requires:	gupnp-av >= 0.5.5
-Requires:	gupnp >= 0.13
+Requires:	gupnp >= 0.18
 Requires:	libsoup >= 2.4
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -87,6 +88,7 @@ UPnP:
 %patch1 -p1
 
 %build
+%{__intltoolize}
 %{__libtoolize}
 %{__aclocal}
 %{__autoconf}
@@ -102,10 +104,12 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+%find_lang %{name}
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files
+%files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
 %attr(755,root,root) %{_bindir}/gssdp-discover
