@@ -12,12 +12,13 @@ Patch1:		%{name}-desktop.patch
 URL:		http://gupnp.org/
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.11
+BuildRequires:	gettext-devel
 BuildRequires:	glib2-devel >= 1:2.24
 BuildRequires:	gssdp-devel >= 0.14
 BuildRequires:	gtk+3-devel >= 3.0.0
 BuildRequires:	gtksourceview3-devel >= 3.2.0
 BuildRequires:	gupnp-av-devel >= 0.5.5
-BuildRequires:	gupnp-devel >= 0.18
+BuildRequires:	gupnp-devel >= 0.18.0
 BuildRequires:	intltool >= 0.40.6
 BuildRequires:	libsoup-devel >= 2.4
 BuildRequires:	libtool >= 2:2.2
@@ -33,7 +34,7 @@ Requires:	gssdp >= 0.14
 Requires:	gtk+3 >= 3.0.0
 Requires:	gtksourceview3 >= 3.2.0
 Requires:	gupnp-av >= 0.5.5
-Requires:	gupnp >= 0.18
+Requires:	gupnp >= 0.18.0
 Requires:	libsoup >= 2.4
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
