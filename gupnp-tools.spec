@@ -1,12 +1,12 @@
 Summary:	GUPnP Tools
 Summary(pl.UTF-8):	Narzędzia GUPnP
 Name:		gupnp-tools
-Version:	0.8.6
-Release:	2
+Version:	0.8.6.1
+Release:	1
 License:	GPL v2+
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gupnp-tools/0.8/%{name}-%{version}.tar.xz
-# Source0-md5:	915f6b36375b874e2a329b108b91f62b
+# Source0-md5:	d2f67fcb8cfb09eca544d601ac67a603
 Patch0:		%{name}-configure.patch
 Patch1:		%{name}-desktop.patch
 URL:		http://gupnp.org/
@@ -23,8 +23,7 @@ BuildRequires:	intltool >= 0.40.6
 BuildRequires:	libsoup-devel >= 2.4
 BuildRequires:	libtool >= 2:2.2
 BuildRequires:	libuuid-devel
-# bogus version check ">= LIBXML_REQUIRED" (no $; the value has bogus value anyway: 2.24)
-BuildRequires:	libxml2-devel
+BuildRequires:	libxml2-devel >= 2.0
 BuildRequires:	pkgconfig
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
