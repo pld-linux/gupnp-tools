@@ -1,12 +1,12 @@
 Summary:	GUPnP Tools
 Summary(pl.UTF-8):	Narzędzia GUPnP
 Name:		gupnp-tools
-Version:	0.8.6.1
+Version:	0.8.7
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gupnp-tools/0.8/%{name}-%{version}.tar.xz
-# Source0-md5:	d2f67fcb8cfb09eca544d601ac67a603
+# Source0-md5:	d35577b9c330bf694ac661f9a83b02e5
 Patch0:		%{name}-configure.patch
 Patch1:		%{name}-desktop.patch
 URL:		http://gupnp.org/
