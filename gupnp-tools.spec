@@ -1,12 +1,12 @@
 Summary:	GUPnP Tools
 Summary(pl.UTF-8):	Narzędzia GUPnP
 Name:		gupnp-tools
-Version:	0.8.7
+Version:	0.8.8
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gupnp-tools/0.8/%{name}-%{version}.tar.xz
-# Source0-md5:	d35577b9c330bf694ac661f9a83b02e5
+# Source0-md5:	ee70dc29098c9a0a5423fe52e2ebe2b4
 Patch0:		%{name}-configure.patch
 Patch1:		%{name}-desktop.patch
 URL:		http://gupnp.org/
@@ -18,7 +18,7 @@ BuildRequires:	gssdp-devel >= 0.14
 BuildRequires:	gtk+3-devel >= 3.0.0
 BuildRequires:	gtksourceview3-devel >= 3.2.0
 BuildRequires:	gupnp-av-devel >= 0.5.5
-BuildRequires:	gupnp-devel >= 0.18.0
+BuildRequires:	gupnp-devel >= 0.20.8
 BuildRequires:	intltool >= 0.40.6
 BuildRequires:	libsoup-devel >= 2.4
 BuildRequires:	libtool >= 2:2.2
@@ -33,7 +33,7 @@ Requires:	gssdp >= 0.14
 Requires:	gtk+3 >= 3.0.0
 Requires:	gtksourceview3 >= 3.2.0
 Requires:	gupnp-av >= 0.5.5
-Requires:	gupnp >= 0.18.0
+Requires:	gupnp >= 0.20.8
 Requires:	libsoup >= 2.4
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
