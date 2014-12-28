@@ -12,7 +12,7 @@ Patch1:		%{name}-desktop.patch
 URL:		http://gupnp.org/
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.11
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	glib2-devel >= 1:2.24
 BuildRequires:	gssdp-devel >= 0.14
 BuildRequires:	gtk+3-devel >= 3.0.0
