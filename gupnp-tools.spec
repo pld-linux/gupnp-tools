@@ -1,21 +1,20 @@
 Summary:	GUPnP Tools
 Summary(pl.UTF-8):	Narzędzia GUPnP
 Name:		gupnp-tools
-Version:	0.8.9
+Version:	0.8.10
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gupnp-tools/0.8/%{name}-%{version}.tar.xz
-# Source0-md5:	e8937e02267b7c9970eae8bae39b4682
-Patch0:		%{name}-configure.patch
-Patch1:		%{name}-desktop.patch
+# Source0-md5:	ad8423d036e98bc6f877528d6b846f6a
+Patch0:		%{name}-desktop.patch
 URL:		http://gupnp.org/
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.11
 BuildRequires:	gettext-tools
 BuildRequires:	glib2-devel >= 1:2.24
 BuildRequires:	gssdp-devel >= 0.14
-BuildRequires:	gtk+3-devel >= 3.0.0
+BuildRequires:	gtk+3-devel >= 3.10.0
 BuildRequires:	gtksourceview3-devel >= 3.2.0
 BuildRequires:	gupnp-av-devel >= 0.5.5
 BuildRequires:	gupnp-devel >= 0.20.8
@@ -27,10 +26,10 @@ BuildRequires:	libxml2-devel >= 2.0
 BuildRequires:	pkgconfig
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
+Requires:	adwaita-icon-theme
 Requires:	glib2 >= 1:2.24
-Requires:	gnome-icon-theme >= 2.20
 Requires:	gssdp >= 0.14
-Requires:	gtk+3 >= 3.0.0
+Requires:	gtk+3 >= 3.10.0
 Requires:	gtksourceview3 >= 3.2.0
 Requires:	gupnp-av >= 0.5.5
 Requires:	gupnp >= 0.20.8
@@ -85,7 +84,6 @@ UPnP:
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
 
 %build
 %{__intltoolize}
