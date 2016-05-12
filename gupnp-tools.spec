@@ -1,25 +1,24 @@
 Summary:	GUPnP Tools
 Summary(pl.UTF-8):	Narzędzia GUPnP
 Name:		gupnp-tools
-Version:	0.8.11
+Version:	0.8.12
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gupnp-tools/0.8/%{name}-%{version}.tar.xz
-# Source0-md5:	d265a1728163e23072a98a18a00eb1a6
+# Source0-md5:	b922a6839128e672b05720ee8b28cec5
 Patch0:		%{name}-desktop.patch
 URL:		http://gupnp.org/
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.11
-BuildRequires:	gettext-tools
+BuildRequires:	gettext-tools >= 0.19.7
 BuildRequires:	glib2-devel >= 1:2.24
 BuildRequires:	gssdp-devel >= 0.14
 BuildRequires:	gtk+3-devel >= 3.10.0
 BuildRequires:	gtksourceview3-devel >= 3.2.0
 BuildRequires:	gupnp-av-devel >= 0.5.5
 BuildRequires:	gupnp-devel >= 0.20.14
-BuildRequires:	intltool >= 0.40.6
-BuildRequires:	libsoup-devel >= 2.4
+BuildRequires:	libsoup-devel >= 2.42
 BuildRequires:	libtool >= 2:2.2
 BuildRequires:	libuuid-devel
 BuildRequires:	libxml2-devel >= 2.0
@@ -33,7 +32,7 @@ Requires:	gtk+3 >= 3.10.0
 Requires:	gtksourceview3 >= 3.2.0
 Requires:	gupnp-av >= 0.5.5
 Requires:	gupnp >= 0.20.14
-Requires:	libsoup >= 2.4
+Requires:	libsoup >= 2.42
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -86,7 +85,7 @@ UPnP:
 %patch0 -p1
 
 %build
-%{__intltoolize}
+%{__gettextize}
 %{__libtoolize}
 %{__aclocal}
 %{__autoconf}
