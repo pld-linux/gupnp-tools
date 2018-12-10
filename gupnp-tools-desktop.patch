@@ -1,33 +1,33 @@
---- gupnp-tools-0.8.12/data/gupnp-av-cp.desktop.in.in.orig	2016-05-11 22:13:19.590079996 +0200
-+++ gupnp-tools-0.8.12/data/gupnp-av-cp.desktop.in.in	2016-05-11 22:15:54.713406820 +0200
-@@ -1,7 +1,7 @@
- [Desktop Entry]
+--- gupnp-tools-0.8.15/data/gupnp-av-cp.desktop.in.orig	2018-12-10 17:34:41.475536944 +0100
++++ gupnp-tools-0.8.15/data/gupnp-av-cp.desktop.in	2018-12-10 17:36:25.845535752 +0100
+@@ -2,7 +2,7 @@
  Encoding=UTF-8
  Name=UPnP AV Control Point
+ Comment=Browse and control UPnP multimedia devices
 -Categories=GTK;Development;
 +Categories=GTK;Network;RemoteAccess;
  Exec=gupnp-av-cp
- Icon=@PKGDATADIR@/pixmaps/av-cp.png
- Terminal=false
---- gupnp-tools-0.8.12/data/gupnp-network-light.desktop.in.in.orig	2016-05-11 22:13:19.590079996 +0200
-+++ gupnp-tools-0.8.12/data/gupnp-network-light.desktop.in.in	2016-05-11 22:16:42.286738157 +0200
-@@ -1,7 +1,7 @@
- [Desktop Entry]
+ # Translators: Do NOT translate or transliterate this text (this is an icon file name)!
+ Icon=av-cp
+--- gupnp-tools-0.8.15/data/gupnp-network-light.desktop.in.orig	2018-12-10 17:34:41.475536944 +0100
++++ gupnp-tools-0.8.15/data/gupnp-network-light.desktop.in	2018-12-10 17:36:36.782202295 +0100
+@@ -2,7 +2,7 @@
  Encoding=UTF-8
  Name=UPnP Network Light
+ Comment=Sample UPnP application for controlling lights
 -Categories=GTK;Development;
 +Categories=GTK;Network;RemoteAccess;
  Exec=gupnp-network-light
- Icon=@PKGDATADIR@/pixmaps/network-light-256x256.png
- Terminal=false
---- gupnp-tools-0.8.12/data/gupnp-universal-cp.desktop.in.in.orig	2016-05-11 22:13:19.590079996 +0200
-+++ gupnp-tools-0.8.12/data/gupnp-universal-cp.desktop.in.in	2016-05-11 22:17:11.430070272 +0200
-@@ -1,7 +1,7 @@
- [Desktop Entry]
+ # Translators: Do NOT translate or transliterate this text (this is an icon file name)!
+ Icon=network-light-256x256
+--- gupnp-tools-0.8.15/data/gupnp-universal-cp.desktop.in.orig	2018-12-10 17:34:41.475536944 +0100
++++ gupnp-tools-0.8.15/data/gupnp-universal-cp.desktop.in	2018-12-10 17:36:47.982202167 +0100
+@@ -2,7 +2,7 @@
  Encoding=UTF-8
  Name=UPnP Universal Control Point
+ Comment=Inspect and control UPnP devices across your local network
 -Categories=GTK;Development;
 +Categories=GTK;Network;RemoteAccess;
  Exec=gupnp-universal-cp
- Icon=@PKGDATADIR@/pixmaps/universal-cp.png
- Terminal=false
+ # Translators: Do NOT translate or transliterate this text (this is an icon file name)!
+ Icon=universal-cp
