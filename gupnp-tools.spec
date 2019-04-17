@@ -1,36 +1,37 @@
 Summary:	GUPnP Tools
 Summary(pl.UTF-8):	Narzędzia GUPnP
 Name:		gupnp-tools
-Version:	0.8.15
+Version:	0.10.0
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gupnp-tools/0.8/%{name}-%{version}.tar.xz
-# Source0-md5:	c3ea447a682a3431494093efa419b00a
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gupnp-tools/0.10/%{name}-%{version}.tar.xz
+# Source0-md5:	8c66d4aca756478615761a26ed7c8dba
 Patch0:		%{name}-desktop.patch
+Patch1:		%{name}-meson.patch
 URL:		http://gupnp.org/
 BuildRequires:	gettext-tools >= 0.19.7
 BuildRequires:	glib2-devel >= 1:2.24
-BuildRequires:	gssdp-devel >= 0.14
+BuildRequires:	gssdp-devel >= 1.2.0
 BuildRequires:	gtk+3-devel >= 3.10.0
 BuildRequires:	gtksourceview4-devel >= 4
 BuildRequires:	gupnp-av-devel >= 0.5.5
-BuildRequires:	gupnp-devel >= 0.20.14
+BuildRequires:	gupnp-devel >= 1.2.0
 BuildRequires:	libsoup-devel >= 2.42
 BuildRequires:	libuuid-devel
 BuildRequires:	libxml2-devel >= 2.0
 BuildRequires:	meson
-BuildRequires:	ninja
+BuildRequires:	ninja >= 1.5
 BuildRequires:	pkgconfig
-BuildRequires:	rpmbuild(macros) >= 1.727
+BuildRequires:	rpmbuild(macros) >= 1.736
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 Requires:	adwaita-icon-theme
 Requires:	glib2 >= 1:2.24
-Requires:	gssdp >= 0.14
+Requires:	gssdp >= 1.2.0
 Requires:	gtk+3 >= 3.10.0
 Requires:	gupnp-av >= 0.5.5
-Requires:	gupnp >= 0.20.14
+Requires:	gupnp >= 1.2.0
 Requires:	libsoup >= 2.42
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -82,16 +83,17 @@ UPnP:
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 %meson build
 
-%meson_build -C build
+%ninja_build -C build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%meson_install -C build
+%ninja_install -C build
 
 %find_lang %{name}
 
@@ -110,6 +112,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_desktopdir}/gupnp-av-cp.desktop
 %{_desktopdir}/gupnp-network-light.desktop
 %{_desktopdir}/gupnp-universal-cp.desktop
-%{_iconsdir}/hicolor/256x256/av-cp.png
-%{_iconsdir}/hicolor/256x256/network-light-256x256.png
-%{_iconsdir}/hicolor/256x256/universal-cp.png
+%{_iconsdir}/hicolor/256x256/apps/av-cp.png
+%{_iconsdir}/hicolor/256x256/apps/network-light-256x256.png
+%{_iconsdir}/hicolor/256x256/apps/universal-cp.png
