@@ -1,14 +1,14 @@
 Summary:	GUPnP Tools
 Summary(pl.UTF-8):	Narzędzia GUPnP
 Name:		gupnp-tools
-Version:	0.10.0
+Version:	0.10.1
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gupnp-tools/0.10/%{name}-%{version}.tar.xz
-# Source0-md5:	8c66d4aca756478615761a26ed7c8dba
+Source0:	https://download.gnome.org/sources/gupnp-tools/0.10/%{name}-%{version}.tar.xz
+# Source0-md5:	232c64ec652d3f5888d8c2cdf0d81b86
 Patch0:		%{name}-desktop.patch
-Patch1:		%{name}-meson.patch
+Patch1:		%{name}-format.patch
 URL:		http://gupnp.org/
 BuildRequires:	gettext-tools >= 0.19.7
 BuildRequires:	glib2-devel >= 1:2.24
@@ -112,6 +112,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_desktopdir}/gupnp-av-cp.desktop
 %{_desktopdir}/gupnp-network-light.desktop
 %{_desktopdir}/gupnp-universal-cp.desktop
-%{_iconsdir}/hicolor/256x256/apps/av-cp.png
-%{_iconsdir}/hicolor/256x256/apps/network-light-256x256.png
-%{_iconsdir}/hicolor/256x256/apps/universal-cp.png
+%{_iconsdir}/hicolor/*x*/apps/av-cp.png
+%{_iconsdir}/hicolor/*x*/apps/network-light.png
+%{_iconsdir}/hicolor/*x*/apps/universal-cp.png
