@@ -9,8 +9,8 @@
  Exec=gupnp-av-cp
  # Translators: Do NOT translate or transliterate this text (this is an icon file name)!
  Icon=av-cp
---- gupnp-tools-0.8.15/data/gupnp-network-light.desktop.in.orig	2018-12-10 17:34:41.475536944 +0100
-+++ gupnp-tools-0.8.15/data/gupnp-network-light.desktop.in	2018-12-10 17:36:36.782202295 +0100
+--- gupnp-tools-0.10.1/data/gupnp-network-light.desktop.in.orig	2021-06-23 06:33:51.584911804 +0200
++++ gupnp-tools-0.10.1/data/gupnp-network-light.desktop.in	2021-06-23 17:56:49.748602942 +0200
 @@ -2,7 +2,7 @@
  Encoding=UTF-8
  Name=UPnP Network Light
@@ -19,7 +19,7 @@
 +Categories=GTK;Network;RemoteAccess;
  Exec=gupnp-network-light
  # Translators: Do NOT translate or transliterate this text (this is an icon file name)!
- Icon=network-light-256x256
+ Icon=network-light
 --- gupnp-tools-0.8.15/data/gupnp-universal-cp.desktop.in.orig	2018-12-10 17:34:41.475536944 +0100
 +++ gupnp-tools-0.8.15/data/gupnp-universal-cp.desktop.in	2018-12-10 17:36:47.982202167 +0100
 @@ -2,7 +2,7 @@
