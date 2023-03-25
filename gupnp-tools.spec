@@ -1,22 +1,22 @@
 Summary:	GUPnP Tools
 Summary(pl.UTF-8):	Narzędzia GUPnP
 Name:		gupnp-tools
-Version:	0.10.3
+Version:	0.12.0
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
-Source0:	https://download.gnome.org/sources/gupnp-tools/0.10/%{name}-%{version}.tar.xz
-# Source0-md5:	078891f20f60db7600551142eb468eb7
+Source0:	https://download.gnome.org/sources/gupnp-tools/0.12/%{name}-%{version}.tar.xz
+# Source0-md5:	76f45542acea034c72487257a1e1f5b9
 Patch0:		%{name}-desktop.patch
 URL:		http://gupnp.org/
 BuildRequires:	gettext-tools >= 0.19.7
-BuildRequires:	glib2-devel >= 1:2.24
-BuildRequires:	gssdp-devel >= 1.2.0
+BuildRequires:	glib2-devel >= 1:2.68
+BuildRequires:	gssdp1.6-devel >= 1.6.0
 BuildRequires:	gtk+3-devel >= 3.10.0
 BuildRequires:	gtksourceview4-devel >= 4
 BuildRequires:	gupnp-av-devel >= 0.5.5
-BuildRequires:	gupnp-devel >= 1.2.0
-BuildRequires:	libsoup-devel >= 2.42
+BuildRequires:	gupnp1.6-devel >= 1.6.0
+BuildRequires:	libsoup3-devel >= 3.0
 BuildRequires:	libuuid-devel
 BuildRequires:	libxml2-devel >= 2.0
 BuildRequires:	meson
@@ -26,12 +26,12 @@ BuildRequires:	rpmbuild(macros) >= 1.736
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 Requires:	adwaita-icon-theme
-Requires:	glib2 >= 1:2.24
-Requires:	gssdp >= 1.2.0
+Requires:	glib2 >= 1:2.68
+Requires:	gssdp1.6 >= 1.6.0
 Requires:	gtk+3 >= 3.10.0
 Requires:	gupnp-av >= 0.5.5
-Requires:	gupnp >= 1.2.0
-Requires:	libsoup >= 2.42
+Requires:	gupnp1.6 >= 1.6.0
+Requires:	libsoup3 >= 3.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -103,6 +103,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS ChangeLog NEWS README.md
 %attr(755,root,root) %{_bindir}/gssdp-discover
 %attr(755,root,root) %{_bindir}/gupnp-av-cp
+%attr(755,root,root) %{_bindir}/gupnp-event-dumper
 %attr(755,root,root) %{_bindir}/gupnp-network-light
 %attr(755,root,root) %{_bindir}/gupnp-universal-cp
 %attr(755,root,root) %{_bindir}/gupnp-upload
