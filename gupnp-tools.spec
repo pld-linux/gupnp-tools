@@ -1,12 +1,12 @@
 Summary:	GUPnP Tools
 Summary(pl.UTF-8):	Narzędzia GUPnP
 Name:		gupnp-tools
-Version:	0.12.0
+Version:	0.12.1
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
 Source0:	https://download.gnome.org/sources/gupnp-tools/0.12/%{name}-%{version}.tar.xz
-# Source0-md5:	76f45542acea034c72487257a1e1f5b9
+# Source0-md5:	b483213862f84437aa51c27031419c81
 Patch0:		%{name}-desktop.patch
 URL:		http://gupnp.org/
 BuildRequires:	gettext-tools >= 0.19.7
@@ -23,6 +23,7 @@ BuildRequires:	meson
 BuildRequires:	ninja >= 1.5
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.736
+BuildRequires:	sed >= 4.0
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 Requires:	adwaita-icon-theme
@@ -82,6 +83,9 @@ UPnP:
 %prep
 %setup -q
 %patch0 -p1
+
+# disable due to libxml2 xmlRecoverMemory deprecation
+%{__sed} -i -e '/-Werror=deprecated-declarations/d' meson.build
 
 %build
 %meson build
