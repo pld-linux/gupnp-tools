@@ -1,17 +1,17 @@
 Summary:	GUPnP Tools
 Summary(pl.UTF-8):	Narzędzia GUPnP
 Name:		gupnp-tools
-Version:	0.12.1
+Version:	0.12.2
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
 Source0:	https://download.gnome.org/sources/gupnp-tools/0.12/%{name}-%{version}.tar.xz
-# Source0-md5:	b483213862f84437aa51c27031419c81
+# Source0-md5:	af34e3ff418c95efa27998e155afe15c
 Patch0:		%{name}-desktop.patch
 URL:		http://gupnp.org/
 BuildRequires:	gettext-tools >= 0.19.7
 BuildRequires:	glib2-devel >= 1:2.68
-BuildRequires:	gssdp1.6-devel >= 1.6.0
+BuildRequires:	gssdp1.6-devel >= 1.6.2
 BuildRequires:	gtk+3-devel >= 3.10.0
 BuildRequires:	gtksourceview4-devel >= 4
 BuildRequires:	gupnp-av-devel >= 0.5.5
@@ -22,13 +22,12 @@ BuildRequires:	libxml2-devel >= 2.0
 BuildRequires:	meson
 BuildRequires:	ninja >= 1.5
 BuildRequires:	pkgconfig
-BuildRequires:	rpmbuild(macros) >= 1.736
-BuildRequires:	sed >= 4.0
+BuildRequires:	rpmbuild(macros) >= 2.042
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 Requires:	adwaita-icon-theme
 Requires:	glib2 >= 1:2.68
-Requires:	gssdp1.6 >= 1.6.0
+Requires:	gssdp1.6 >= 1.6.2
 Requires:	gtk+3 >= 3.10.0
 Requires:	gupnp-av >= 0.5.5
 Requires:	gupnp1.6 >= 1.6.0
@@ -84,18 +83,15 @@ UPnP:
 %setup -q
 %patch -P0 -p1
 
-# disable due to libxml2 xmlRecoverMemory deprecation
-%{__sed} -i -e '/-Werror=deprecated-declarations/d' meson.build
-
 %build
-%meson build
+%meson
 
-%ninja_build -C build
+%meson_build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%ninja_install -C build
+%meson_install
 
 %find_lang %{name}
 
