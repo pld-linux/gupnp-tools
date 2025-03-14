@@ -82,7 +82,7 @@ UPnP:
 
 %prep
 %setup -q
-%patch0 -p1
+%patch -P0 -p1
 
 # disable due to libxml2 xmlRecoverMemory deprecation
 %{__sed} -i -e '/-Werror=deprecated-declarations/d' meson.build
